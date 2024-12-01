@@ -1,1 +1,38 @@
+with open('/Users/fareesaamir/Downloads/input.txt' ,'r') as fichier1 :
+    contenu = fichier1.read()
 
+
+nombre = []
+nombre1 = []
+for k in contenu.splitlines():
+   nombre.append(k)
+
+
+for k in nombre:
+    k = k.replace("   ", ",")
+    nombre1.append(k)
+
+List1 = []
+List2 = []
+
+for k in nombre1:
+    k1 = k.split(",")[0]
+    k2 =  k.split(",")[1]
+    List1.append(int(k1))
+    List2.append(int(k2))
+
+len(List1)
+
+
+resultat = 0
+for k in range(len(List1)):
+    min1 = min(List1)
+    min2 = min(List2)
+    resultat+= abs(min2 - min1)
+    List1.remove(min1)
+    List2.remove(min2)
+print(resultat)
+
+
+
+RESULT : 1879048
